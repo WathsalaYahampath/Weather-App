@@ -8,7 +8,7 @@ exports["default"] = void 0;
 require("./current-weather.css");
 
 var CurrentWeather = function CurrentWeather() {
-  return "hello";
+  return;
 };
 
 var _default = CurrentWeather;
