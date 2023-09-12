@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import {AsyncPaginate} from "react-select-async-paginate";
 import { GEO_API_URL } from '../api';
 import { geoApiOptions } from '../api';
-
+import axios from 'axios';
 const Search = ({onSearchChange}) => {
     const[Search,setSearch]= useState(null);
 
     const loadOptions= async (inputValue) =>{
+        console.log("input",inputValue);
+       const response0 = fetch(`${GEO_API_URL}/cities?minPopulation=100000&namePrefix=${inputValue}`);
         return fetch(`${GEO_API_URL}/cities?minPopulation=100000&namePrefix=${inputValue}`,
         geoApiOptions
                 )  
@@ -31,6 +33,7 @@ const Search = ({onSearchChange}) => {
         //     } catch (error) {
         //         console.error(error);
         //     }
+        
         
     };
     
