@@ -8,7 +8,7 @@ const Search = ({onSearchChange}) => {
 
     const loadOptions= async (inputValue) =>{
         console.log("input",inputValue);
-       const response0 = fetch(`${GEO_API_URL}/cities?minPopulation=100000&namePrefix=${inputValue}`);
+      // const response0 = fetch(`${GEO_API_URL}/cities?minPopulation=100000&namePrefix=${inputValue}`);
         return fetch(`${GEO_API_URL}/cities?minPopulation=100000&namePrefix=${inputValue}`,
         geoApiOptions
                 )  
@@ -19,8 +19,8 @@ const Search = ({onSearchChange}) => {
             return{
                 options:response.data.map((city)=>{
                     return{
-                        value: `${city.latitude}${city.logitude}`,
-                        label: `${city.name}${city.countryCode}`,
+                        value: `${city.latitude} ${city.longitude}`,
+                        label: `${city.name},${city.countryCode}`,
                     }
                 })
             }
