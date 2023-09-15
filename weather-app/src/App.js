@@ -40,7 +40,7 @@ function App() {
 
     
     <div className="container">
-      <h1>Weather App</h1>
+      <h1>Loons Lab Weather App</h1>
       
      
       <BrowserRouter>
