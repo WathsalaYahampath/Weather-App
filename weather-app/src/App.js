@@ -6,6 +6,7 @@ import{useState} from 'react';
 import Dashboard from '../src/components/Dashboard/Dashboard';
 import Preferences from '../src/components/Preferences/Preferences';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Forecast from "./components/see-more/seemore";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -39,6 +40,8 @@ function App() {
 
     
     <div className="container">
+      <h1>Weather App</h1>
+      
      
       <BrowserRouter>
         <Routes>
@@ -49,15 +52,16 @@ function App() {
           
         <Search onSearchChange={handleOnSearchChange}/>
         
+        
         }/>
         </Routes>
         
       </BrowserRouter>
-      <h1>Application</h1>
+      
 
       
       {currentWeather && <CurrentWeather data={currentWeather} />}
-      
+      {forecast && <Forecast data={forecast} />}
       
     </div>
    

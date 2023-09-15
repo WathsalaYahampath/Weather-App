@@ -4,7 +4,8 @@ import "./current-weather.css"
 const CurrentWeather = ({data})=>{
     console.log(data);
     return (
-        <div className="weather">
+        <div>
+            <div className="weather">
             <div className="top">
                 <div>
                     <p className="city">{data.city}</p>
@@ -42,6 +43,8 @@ const CurrentWeather = ({data})=>{
             </div>
         </div>
 
+        
+        </div>
     );
 }
 
